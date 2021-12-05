@@ -1,0 +1,13 @@
+<div id="board">
+  <div class="board-header">
+    <div class="board-header-label">Issues roadmap</div>
+  </div>
+  <div class="board-row" *ngFor="let row of rows | keyvalue">
+    <app-row
+      [label]="row.key"
+      [cards]="row.value"
+      [minDueDate]="minDueDate"
+      [maxDueDate]="maxDueDate"
+    ></app-row>
+  </div>
+</div>

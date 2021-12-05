@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ card.key }}</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.dismiss()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p *ngIf="card.fields.summary">
+    <span class="label">Summary:</span> {{ card.fields.summary }}
+  </p>
+  <div class="labels d-flex">
+    <div class="label-item" *ngFor="let label of card.fields.labels">
+      {{ label }}
+    </div>
+  </div>
+  <p *ngIf="card.fields.description">
+    <span class="label">Description:</span> {{ card.fields.description }}
+  </p>
+  <p><span class="label">Due Date:</span> {{ card.fields.duedate }}</p>
+</div>

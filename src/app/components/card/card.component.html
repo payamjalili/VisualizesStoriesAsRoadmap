@@ -1,0 +1,17 @@
+<div
+  class="card-container"
+  [ngStyle]="{
+    'width.px': getCardWidth(card),
+    'margin-left.px': getCardStart(card)
+  }"
+>
+  <div class="card-progress" (click)="showCardDetail()">
+    {{ card.key }} | {{ card.fields.summary }}
+  </div>
+  <div class="card-duedate">{{ card.fields.duedate | date: "MMM d" }}</div>
+  <div class="card-labels d-flex flex-row-reverse">
+    <div class="label-item" *ngFor="let label of card.fields.labels">
+      {{ label }}
+    </div>
+  </div>
+</div>
